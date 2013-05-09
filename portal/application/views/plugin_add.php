@@ -2,9 +2,10 @@
 	<div class="board-text">
 		<h2>添加插件</h2>
 		<form action="<?php echo site_url('/plugin/add/save');?>" method="post" id="form-new">
-			<p>标识: <input type="text" class="txt" name="key"/> 名称: <input type="text" class="txt" name="name"/> 描述: <input type="text" class="txt" name="desc"/></p>
+			<p>CHAIN: <input type="text" class="txt" name="chain"/> 标识: <input type="text" class="txt" name="key"/></p>
+			<p>名称: <input type="text" class="txt" name="name"/> 描述: <input type="text" class="txt" name="desc"/></p>
 			<p>插件代码头部 (header):</p>
-			<p><textarea name="head" cols="100" rows="5"></textarea></p>
+			<p><textarea name="header" cols="100" rows="5"></textarea></p>
 			<p>指令解析器 (parser):</p>
 			<p><textarea name="parser" cols="100" rows="8"></textarea></p>
 			<p>指令处理器 (handler):</p>

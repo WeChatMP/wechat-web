@@ -17,10 +17,11 @@ class Plugin extends CI_Controller {
 		ac_check('plugin', 2);
 		if ($job == 'save')
 		{
-			foreach (array('key', 'name', 'desc', 'head', 'parser', 'handler') as $key)
+			foreach (array('key', 'name', 'desc', 'header', 'parser', 'handler', 'chain') as $key)
 			{
 				$param[$key] = $this->input->get_post($key);
 			}
+			$param['chain'] = (int)$param['chain'];
 			$param['param'] = array();
 			$this->mongo_db->where(array('key' => $param['key']))->update('commandSchema', $param);
 			echo json_encode(array('success' => 1));
@@ -45,10 +46,11 @@ class Plugin extends CI_Controller {
 		ac_check('plugin', 2);
 		if ($job == 'save')
 		{
-			foreach (array('key', 'name', 'desc', 'head', 'parser', 'handler') as $key)
+			foreach (array('key', 'name', 'desc', 'header', 'parser', 'handler', 'chain') as $key)
 			{
 				$param[$key] = $this->input->get_post($key);
 			}
+			$param['chain'] = (int)$param['chain'];
 			$param['param'] = array();
 			$this->mongo_db->insert('commandSchema', $param);
 			echo json_encode(array('success' => 1));
@@ -67,7 +69,7 @@ class Plugin extends CI_Controller {
 	public function index()
 	{
 		ac_check('plugin');
-		$plugins = $this->mongo_db->order_by(array('key' => 'ASC'))->get('commandSchema');
+		$plugins = $this->mongo_db->order_by(array('chain' => 'ASC', 'key' => 'ASC'))->get('commandSchema');
 		$this->load->vars('plugins', $plugins);
 		$this->load->view('plugin');
 	}

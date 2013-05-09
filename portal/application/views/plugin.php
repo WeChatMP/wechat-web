@@ -11,6 +11,7 @@
 		<table class="query-table">
 			<thead class="query-table-head">
 			<tr>
+				<td>CHAIN</td>
 				<td>标识</td>
 				<td>名称</td>
 				<td>描述</td>
@@ -21,6 +22,7 @@
 foreach ($plugins as $plugin){
 ?>
 			<tr>
+				<td><?php echo $plugin['chain'];?></td>
 				<td><?php echo $plugin['key'];?></td>
 				<td><?php echo $plugin['name'];?></td>
 				<td><?php echo $plugin['desc'];?></td>
