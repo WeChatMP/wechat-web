@@ -1,0 +1,105 @@
+@charset utf-8;
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+form,fieldset,input,textarea,p,blockquote,th,td {
+padding: 0;
+margin: 0;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+fieldset,img {
+border: 0;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+font-weight: normal;
+font-style: normal;
+}
+ol,ul {
+list-style: none;
+}
+caption,th {
+text-align: left;
+}
+h1,h2,h3,h4,h5,h6 {
+font-weight: normal;
+font-size: 100%;
+}
+q:before,q:after {
+content:'';
+}
+abbr,acronym { border: 0;
+}
+
+.txt
+{
+	font-size: 16px;
+	line-height: 22px;
+	height: 22px;
+	color: #444;
+	border: 0;
+	padding: 9px 16px;
+	border: 1px solid #d7d7d7;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.15) inset;
+}
+
+.btn2
+{
+	background: -webkit-linear-gradient(top, #84af00 0%,#79a200 100%);
+	background: -moz-linear-gradient(top , #84af00 0%,#79a200 100%);
+	background: -ms-linear-gradient(top, #84af00 0%,#79a200 100%);
+	background: linear-gradient(top, #84af00 0%,#79a200 100%);
+	height: 40px;
+	border: 0;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	line-height: 40px;
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(117,155,0,0.65);
+	font-size: 20px;
+	color: #fff;
+	padding-left: 20px;
+	padding-right: 20px;
+	cursor: pointer;
+}
+
+.btn2:hover{
+	background: -webkit-linear-gradient(top, #a1c400 0%,#a1c400 100%);
+	background: -moz-linear-gradient(top , #a1c400 0%,#a1c400 100%);
+	background: -ms-linear-gradient(top, #a1c400 0%,#a1c400 100%);
+	background: linear-gradient(top, #a1c400 0%,#a1c400 100%);
+}
+
+.btn1 {
+	background: url('/images/login-24.png') no-repeat;
+	border: 0;
+	cursor: pointer;
+	line-height: 30px;
+	display: block;
+	height: 32px;
+	width: 88px;
+	font-size: 16px;
+	color: #fff;
+	text-shadow: 0px 1px 1px rgba(0,51,102,0.5);
+	letter-spacing: 5px;
+	text-align: left;
+	text-indent: 12px;
+	background-position: 0 -773px;
+}
+
+.btn1:hover
+{
+	background-position: 0 -824px;
+}
+
+.clear
+{
+	clear: both;
+}
+
+
+body, p, span, a, textarea, select, button, input, pre
+{
+	font-family: "Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei","微软雅黑",tahoma,arial,simsun,"宋体";
+}
