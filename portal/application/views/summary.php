@@ -26,8 +26,9 @@ $uptime = timespan($status['uptime']);
 <div class="board">
 	<div class="board-text">
 		<h2>服务控制</h2>
-		<p style="float: left"><button onclick="sendSignal('reloadCmdDefs')" class="btn2">刷新插件服务</button></p>
-		<p style="float: left"><button onclick="sendSignal('reloadMsgDefs')" class="btn2">刷新消息表</button></p>
+		<p style="float: left"><button onclick="sendSignal('reloadCmdDefs')" class="btn2">重载插件</button></p>
+		<p style="float: left"><button onclick="sendSignal('reloadMsgDefs')" class="btn2">重载消息模板</button></p>
+		<p style="float: left"><button onclick="sendSignal('purge')" class="btn2">更新缓存</button></p>
 		<div class="clear"></div>
 	</div>
 </div>
