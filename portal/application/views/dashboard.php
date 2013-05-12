@@ -28,6 +28,7 @@
 				<a class="menuitem" href="#log" id="nav-log">记录查询</a>
 				<a class="menuitem" href="#msg" id="nav-msg">消息模板</a>
 				<a class="menuitem" href="#plugin" id="nav-plugin">插件管理</a>
+				<a class="menuitem" href="#baike" id="nav-baike">百科</a>
 				<a class="menuitem" href="#priv" id="nav-priv">权限管理</a>
 				<a class="menuitem" href="#logout" id="nav-logout">退出登录</a>
 			</div>
@@ -68,7 +69,7 @@ function logout()
 }
 function openPage(url)
 {
-	$.get('<?php echo site_url('/');?>' + url, '', function(data) {
+	$.get('<?php echo site_url('/');?>' + url + '?r=' + Math.random(), '', function(data) {
 		$('#board').html(data);
 		$('#loading').hide();
 		$('#board').fadeIn(256);

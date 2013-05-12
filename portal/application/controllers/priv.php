@@ -6,7 +6,7 @@ class Priv extends CI_Controller {
 	{
 		parent::__construct();
 		$this->user = get_login();
-		$this->acl = array('dashboard' => '进入平台', 'log' => '查询记录', 'msg' => '查看消息模板', 'msg_alter' => '修改消息模板', 'summary' => '查看运行摘要', 'send_signal' => '控制服务', 'send_command' => '测试指令', 'priv' => '查看权限账号', 'priv_edit' => '编辑权限账号', 'priv_del' => '删除权限账号', 'plugin' => '插件管理');
+		$this->acl = array('dashboard' => '进入平台', 'log' => '查询记录', 'msg' => '查看消息模板', 'msg_alter' => '修改消息模板', 'summary' => '查看运行摘要', 'send_signal' => '控制服务', 'send_command' => '测试指令', 'priv' => '查看权限账号', 'priv_edit' => '编辑权限账号', 'priv_del' => '删除权限账号', 'plugin' => '插件管理', 'baike' => '百科管理');
 		if (!$this->user)
 		{
 			ajax_login();
