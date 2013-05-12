@@ -1,1 +1,35 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');class CI_Wechat {	public function __construct()	{	}	public function call($method, $param = NULL)	{		$ch = curl_init();		$CI =& get_instance();		curl_setopt($ch, CURLOPT_URL, $CI->config->item('wechat_service') . 'api/' . $method);		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);		curl_setopt($ch, CURLOPT_TIMEOUT, 10);		if ($param)		{			curl_setopt($ch, CURLOPT_POST, 1);			curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));			curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($param));		}		$resp = curl_exec($ch);		curl_close($ch);		return json_decode($resp, TRUE);	}	}/* End of file */
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class CI_Wechat {
+
+	public function __construct()
+	{
+	}
+
+	public function call($method, $param = NULL)
+	{
+		$CI =& get_instance();
+		
+		$context = array();
+
+		$context['http'] = array(
+			'method' => 'POST',
+			'header' => 'Content-Type: application/json\r\n',
+			'content' => '[]'
+		);
+		
+		if ($param)
+		{
+			$context['http'] = array(
+				'method' => 'POST',
+				'header' => 'Content-Type: application/json\r\n',
+				'content' => json_encode($param)
+			);
+		}
+
+		return json_decode(file_get_contents($CI->config->item('wechat_service') . 'api/' . $method, false, stream_context_create($context)), TRUE);
+	}
+	
+}
+
+/* End of file */
