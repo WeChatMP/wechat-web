@@ -3,6 +3,7 @@
 <tr>
 <td width="160">时间</td>
 <td width="100">OpenID</td>
+<td width="40">时间</td>
 <td width="120">指令</td>
 <td>回复</td>
 </tr>
@@ -13,6 +14,7 @@ foreach ($logs as $row){
 <tr style="border-bottom: 1px solid #eee">
 <td><?php echo date('Y-m-d H:i:s', $row['time']->sec);?></td>
 <td><?php echo $row['user']['openid'];?></td>
+<td><?php echo round(microtime_diff($row['parsed']['startTime'], $row['parsed']['endTime']) * 1000, 2);?> ms</td>
 <td style="word-break:break-all;"><?php echo $row['msg'];?></td>
 <td style="word-break:break-all;"><?php echo str_replace("\n", "<br/>", $row['parsed']['replyMsg']);?></td>
 </tr>

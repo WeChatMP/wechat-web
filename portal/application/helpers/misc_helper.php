@@ -96,4 +96,16 @@ function cut_str($string, $sublen, $start = 0)
  
 	if(count($t_string[0]) - $start > $sublen) return join('', array_slice($t_string[0], $start, $sublen))."..."; 
 	return join('', array_slice($t_string[0], $start, $sublen)); 
-} 
+}
+
+function microtime_diff( $start, $end=NULL ) { 
+	if( !$end ) 
+	{ 
+		$end = microtime(); 
+	} 
+	list($start_usec, $start_sec) = explode(" ", $start); 
+	list($end_usec, $end_sec) = explode(" ", $end); 
+	$diff_sec = intval($end_sec) - intval($start_sec); 
+	$diff_usec = floatval($end_usec) - floatval($start_usec); 
+	return floatval( $diff_sec ) + $diff_usec; 
+}
